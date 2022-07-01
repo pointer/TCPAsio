@@ -1,4 +1,6 @@
 cmake-build*
 .vs/
+.vscode/
 out/
 build/
+PreLoad.cmake

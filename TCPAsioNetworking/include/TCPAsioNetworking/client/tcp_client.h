@@ -3,6 +3,8 @@
 //
 
 #pragma once
+#ifndef __TCP_CLIENT_H__
+#define __TCP_CLIENT_H__
 #include <boost/asio.hpp>
 #include <queue>
 
@@ -38,4 +40,4 @@ namespace TCPAsio {
     };
 }
 
-
+#endif

@@ -2,6 +2,8 @@
 // Created by ozzadar on 2021-08-22.
 //
 
+#ifndef __TCP_CONNECTION_H__
+#define __TCP_CONNECTION_H__
 #pragma once
 #include <boost/asio.hpp>
 #include <memory>
@@ -53,4 +55,4 @@ class TCPConnection : public std::enable_shared_from_this<TCPConnection> {
     };
 }
 
-
+#endif

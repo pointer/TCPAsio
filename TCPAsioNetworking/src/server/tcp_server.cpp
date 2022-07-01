@@ -7,8 +7,8 @@
 
 namespace TCPAsio {
     using boost::asio::ip::tcp;
-    TCPServer::TCPServer(IP_VERSION ipv, int port) : _ipVersion(ipv), _port(port),
-        acceptor_(io_context_, tcp::endpoint(_ipVersion == IP_VERSION::IP_V4 ? tcp::v4() : tcp::v6(), _port)) {
+    TCPServer::TCPServer(IP_VERSION ipv, int port) : ip_version_(ipv), port_(port),
+        acceptor_(io_context_, tcp::endpoint(ip_version_ == IP_VERSION::IP_V4 ? tcp::v4() : tcp::v6(), port_)) {
     }
 
     int TCPServer::Run() {

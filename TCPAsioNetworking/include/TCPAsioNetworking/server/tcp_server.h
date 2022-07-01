@@ -1,7 +1,8 @@
 //
 // Created by ozzadar on 2021-08-22.
 //
-
+#ifndef __TCP_SERVER_H__
+#define __TCP_SERVER_H__
 #pragma once
 
 #include <boost/asio.hpp>
@@ -19,8 +20,8 @@ namespace TCPAsio {
     };
 
     class TCPServer {
-        using OnJoinHandler = std::function<void(TCPConnection::tcp_connection)>;
-        using OnLeaveHandler = std::function<void(TCPConnection::tcp_connection)>;
+        using OnJoinHandler = std::function<void(TCPAsio::TCPConnection::tcp_connection)>;
+        using OnLeaveHandler = std::function<void(TCPAsio::TCPConnection::tcp_connection)>;
         using OnClientMessageHandler = std::function<void(std::string)>;
 
     public:
@@ -37,8 +38,8 @@ namespace TCPAsio {
         OnClientMessageHandler OnClientMessage;
 
     private:
-        IP_VERSION _ipVersion;
-        int _port;
+        IP_VERSION ip_version_;
+        int port_;
 
         io::io_context io_context_;
         io::ip::tcp::acceptor  acceptor_;
@@ -47,4 +48,4 @@ namespace TCPAsio {
     };
 }
 
-
+#endif
